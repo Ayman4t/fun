@@ -1,0 +1,7 @@
+{
+  "$schema": "https://www.partykit.io/schema.json",
+  "name": "shad-el-habl",
+  "main": "party/arena.ts",
+  "parties": { "shard": "party/shard.ts" },
+  "compatibilityDate": "2024-10-01"
+}

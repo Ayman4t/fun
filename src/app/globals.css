@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; margin: 0; overscroll-behavior: none; background: #020617; }
+
+/* Winter: falling snow */
+.snow {
+  opacity: .8;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+    radial-gradient(3px 3px at 80px 90px, #fff, transparent),
+    radial-gradient(2px 2px at 130px 20px, #fff, transparent),
+    radial-gradient(2px 2px at 50px 110px, #fff, transparent);
+  background-size: 150px 130px;
+  animation: snow 6s linear infinite;
+}
+@keyframes snow { to { background-position: 0 130px; } }
+
+/* Summer: pulsing heat glow */
+.heat {
+  background: radial-gradient(circle at 20% 15%, rgba(251,191,36,.55), transparent 55%);
+  animation: heat 3s ease-in-out infinite;
+}
+@keyframes heat { 50% { opacity: .45; transform: scale(1.15); } }
+
+/* Super Tug screen shake */
+.shake-screen { animation: shake .3s; }
+@keyframes shake {
+  0%, 100% { transform: none; }
+  20% { transform: translate(-6px, 3px); }
+  40% { transform: translate(5px, -4px); }
+  60% { transform: translate(-4px, -3px); }
+  80% { transform: translate(4px, 4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snow, .heat, .shake-screen { animation: none; }
+}
